@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Moroccan Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Roboto:wght@300;400;500&family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Our Wedding</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#stay">Where to Stay</a></li>
+                <li><a href="#venues">Venues</a></li>
+                <li><a href="#tips">Tips</a></li>
+                <li><a href="#qa">Q&A</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Celebrating Our Love</h1>
+                    <p class="hero-subtitle">Join us for a magical three-day celebration in the heart of Morocco</p>
+                    <div class="hero-date-container">
+                        <div class="hero-date">April 17, 18 & 19</div>
+                        <div class="hero-year">2026</div>
+                    </div>
+                </div>
+                <div class="hero-pattern"></div>
+            </div>
+        </section>
+
+        <section id="schedule" class="schedule">
+            <div class="container">
+                <h2 class="section-title">Schedule</h2>
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <div class="schedule-day">Friday, April 17</div>
+                        <div class="schedule-content">
+                            <h3>Welcome Drinks</h3>
+                            <p>Relaxed welcome drinks to kick off our celebration</p>
+                            <div class="schedule-time">Evening: 7:00 PM - 11:00 PM</div>
+                            <div class="schedule-location">Jardins du Lotus</div>
+                        </div>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Saturday, April 18</div>
+                        <div class="schedule-content">
+                            <h3>Wedding Ceremony & Reception</h3>
+                            <p>The main celebration with ceremony, dinner, and dancing</p>
+                            <div class="schedule-time">All day: 4:00 PM - Late</div>
+                            <div class="schedule-location">Beldi Country Club</div>
+                        </div>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Sunday, April 19</div>
+                        <div class="schedule-content">
+                            <h3>Farewell Garden Pool Party</h3>
+                            <p>Casual farewell garden pool party to wrap up our celebration</p>
+                            <div class="schedule-time">Morning: 10:00 AM - 2:00 PM</div>
+                            <div class="schedule-location">Private Villa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rsvp" class="rsvp">
+            <div class="container">
+                <h2 class="section-title">RSVP</h2>
+                <p class="section-subtitle">Please let us know which events you'll be attending</p>
+                
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="partner">Will you be bringing a partner?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="partner" value="yes" id="partnerYes"> Yes</label>
+                            <label><input type="radio" name="partner" value="no" id="partnerNo"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-section partner-details" id="partnerDetails" style="display: none;">
+                        <h3>Partner Details</h3>
+                        <div class="form-group">
+                            <label for="partnerName">Partner's Full Name</label>
+                            <input type="text" id="partnerName" name="partnerName">
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerEmail">Partner's Email</label>
+                            <input type="email" id="partnerEmail" name="partnerEmail">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Event Attendance</h3>
+                        <div class="event-grid">
+                            <div class="event-card">
+                                <h4>Friday - Welcome Drinks</h4>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="friday" value="yes"> Attending</label>
+                                    <label><input type="radio" name="friday" value="no"> Not Attending</label>
+                                </div>
+                            </div>
+                            <div class="event-card">
+                                <h4>Saturday - Wedding</h4>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="saturday" value="yes"> Attending</label>
+                                    <label><input type="radio" name="saturday" value="no"> Not Attending</label>
+                                </div>
+                            </div>
+                            <div class="event-card">
+                                <h4>Sunday - Farewell Pool Party</h4>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="sunday" value="yes"> Attending</label>
+                                    <label><input type="radio" name="sunday" value="no"> Not Attending</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dietary">Dietary Requirements</label>
+                        <textarea id="dietary" name="dietary" placeholder="Please let us know about any dietary restrictions or allergies"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kids">Number of Children Attending</label>
+                        <input type="number" id="kids" name="kids" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nannies">Will you need nanny services?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nannies" value="yes"> Yes</label>
+                            <label><input type="radio" name="nannies" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Additional Comments</label>
+                        <textarea id="comments" name="comments" placeholder="Anything else we should know?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit RSVP</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="stay" class="stay">
+            <div class="container">
+                <h2 class="section-title">Where to Stay</h2>
+                <div class="stay-grid">
+                    <div class="stay-card">
+                        <h3>Beldi Country Club</h3>
+                        <p>Stay at our wedding venue! Beldi offers beautiful rooms and suites in a stunning countryside setting.</p>
+                        <ul>
+                            <li>On-site at our Saturday wedding venue</li>
+                            <li>Traditional Moroccan architecture</li>
+                            <li>Pool and spa facilities</li>
+                            <li>Beautiful gardens and grounds</li>
+                        </ul>
+                        <a href="https://www.secure-hotel-booking.com/smart/Hotel-Beldi-Country-Club/2EPL/en-US/" target="_blank" class="booking-link">Book at Beldi Country Club</a>
+                    </div>
+                    <div class="stay-card">
+                        <h3>Riads & Other Accommodations</h3>
+                        <p>Experience authentic Moroccan hospitality in traditional riads, modern hotels, or Airbnb properties. We recommend using Airbnb or Booking.com to find and book riads.</p>
+                        <ul>
+                            <li>Traditional riad courtyards and rooftop terraces</li>
+                            <li>Modern hotel amenities and spa facilities</li>
+                            <li>Authentic Moroccan breakfast options</li>
+                            <li>Transportation arrangements available to venues</li>
+                        </ul>
+                        <div class="booking-buttons">
+                            <a href="https://www.airbnb.com.au/s/Marrakesh--Morocco/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJUZ4Xlo3urw0RuK2HT1O2UFk&location_bb=Qf266sD8Z25B%2FGx%2FwQIMng%3D%3D&acp_id=75b8fb2e-11dd-4ee9-aa1a-e7619c9644bb&date_picker_type=calendar&checkin=2026-04-16&checkout=2026-04-20&adults=2&source=structured_search_input_header&search_type=autocomplete_click" target="_blank" class="booking-link">Search on Airbnb</a>
+                            <a href="https://www.booking.com/searchresults.html?ss=Marrakesh&ssne=Marrakesh&ssne_untouched=Marrakesh&efdco=1&label=gen173nr-10CAEoggI46AdIM1gEaA-IAQGYATO4ARnIAQ_YAQPoAQH4AQGIAgGoAgG4Avfx88UGwAIB0gIkZDNlZWQ2MzYtZWQ2NC00OGI0LTg3MDItMTU1MTdmYWU0MjFl2AIB4AIB&aid=304142&lang=en-us&sb=1&src_elem=sb&src=index&dest_id=-38833&dest_type=city&checkin=2026-04-16&checkout=2026-04-20&group_adults=1&no_rooms=1&group_children=0" target="_blank" class="booking-link">Search on Booking.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="venues" class="venues">
+            <div class="container">
+                <h2 class="section-title">Venues</h2>
+                <div class="venues-grid">
+                    <div class="venue-card">
+                        <div class="venue-image venue-lotus"></div>
+                        <h3>Jardins du Lotus</h3>
+                        <p>A stunning garden venue with traditional Moroccan architecture, hosting our welcome drinks on Friday evening.</p>
+                        <div class="venue-address">
+                            <a href="https://maps.app.goo.gl/yqGVqNsMdJHienQX6" target="_blank" class="venue-link">
+                                <span class="venue-pin">📍</span>
+                                Dar El Bacha, 9 Derb Sidi Ali Ben Hamdouch, Marrakech 40000, Morocco
+                            </a>
+                        </div>
+                    </div>
+                    <div class="venue-card">
+                        <div class="venue-image venue-beldi"></div>
+                        <h3>Beldi Country Club</h3>
+                        <p>An enchanting countryside venue offering authentic Moroccan hospitality, hosting our wedding ceremony and reception on Saturday.</p>
+                        <div class="venue-address">
+                            <a href="https://maps.app.goo.gl/Js1yPPRaSAhWQqi26" target="_blank" class="venue-link">
+                                <span class="venue-pin">📍</span>
+                                KM6 route du Barrage BP 210, Marrakech 40000, Morocco
+                            </a>
+                        </div>
+                    </div>
+                    <div class="venue-card">
+                        <div class="venue-image venue-tbd"></div>
+                        <h3>Private Villa</h3>
+                        <p>A beautiful private villa with garden and pool, hosting our farewell party on Sunday.</p>
+                        <div class="venue-address">TBD</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="tips">
+            <div class="container">
+                <h2 class="section-title">Morocco Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card tip-intro">
+                        <div class="tip-icon">🕌</div>
+                        <h3>Morocco Introduction</h3>
+                        <div class="tip-content">
+                            <h4>Payments</h4>
+                            <p>Currency is Moroccan Dirham (MAD). ATMs are widely available. Credit cards accepted at most hotels and restaurants.</p>
+                            
+                            <h4>Customs & Etiquette</h4>
+                            <p>Morocco is a Muslim country. Dress modestly, especially when visiting mosques. Remove shoes when entering homes. Use your right hand for eating and greeting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-card tip-see">
+                        <div class="tip-icon">👁️</div>
+                        <h3>Things to See</h3>
+                        <ul>
+                            <li>Medina and souks</li>
+                            <li>Majorelle Garden</li>
+                            <li>Bahia Palace</li>
+                            <li>Koutoubia Mosque</li>
+                            <li>Atlas Mountains day trip</li>
+                            <li>Saadian Tombs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-card tip-eat-drink">
+                        <div class="tip-icon">🍽️</div>
+                        <h3>Food & Drink</h3>
+                        <div class="tip-content">
+                            <h4>Things to Eat</h4>
+                            <ul>
+                                <li>Tagine (chicken, lamb, or vegetarian)</li>
+                                <li>Couscous (traditionally served on Fridays)</li>
+                                <li>Pastilla (sweet and savory pastry)</li>
+                                <li>Mint tea (served throughout the day)</li>
+                                <li>Fresh orange juice</li>
+                                <li>Moroccan pastries and sweets</li>
+                            </ul>
+                            
+                            <h4>Where to Drink</h4>
+                            <ul>
+                                <li>Hotel bars and terraces</li>
+                                <li>Sky Bar (rooftop views)</li>
+                                <li>Traditional coffee houses</li>
+                                <li>Gueliz district establishments</li>
+                                <li>Hivernage area lounges</li>
+                            </ul>
+                            <p><em>Note: Alcohol is available but not as prevalent due to Islamic culture.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="qa" class="qa">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Gifts</h3>
+                        <p>Your presence is the greatest gift! If you wish to give something, we would appreciate contributions to our honeymoon fund.</p>
+                        <p><strong>IBAN:</strong> [Your IBAN details here]</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Event Times</h3>
+                        <p><strong>Friday, April 17 - Welcome Drinks:</strong> 7:00 PM - 11:00 PM<br>
+                           <strong>Saturday, April 18 - Wedding:</strong> 4:00 PM - Late<br>
+                           <strong>Sunday, April 19 - Pool Party:</strong> 10:00 AM - 2:00 PM</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Transportation</h3>
+                        <p><strong>Parking:</strong> Limited parking available at venues<br>
+                           <strong>Shuttle:</strong> Complimentary shuttle service provided from major hotels to venues</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Weather & Venues</h3>
+                        <p>Most events are outdoors with covered areas available. Morocco has pleasant weather, but bring a light jacket for evenings.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Dress Codes</h3>
+                        <p><strong>Friday - Welcome Drinks:</strong> Smart casual, Moroccan-inspired<br>
+                           <strong>Saturday - Wedding:</strong> Formal attire, cocktail dress<br>
+                           <strong>Sunday - Pool Party:</strong> Casual chic, swimwear welcome</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Children & Nannies</h3>
+                        <p>Children are welcome at all events. Professional nanny services can be arranged upon request through RSVP.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Dietary Requirements</h3>
+                        <p>We will be serving a set menu featuring authentic Moroccan cuisine. While the menu is pre-planned, we'll do our best to accommodate any dietary restrictions or allergies you specify in your RSVP.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Language</h3>
+                        <p>Most hotels and venues speak English, and French is widely understood throughout Morocco. Learning a few basic Arabic phrases like "Shukran" (thank you) and "Marhaba" (hello) goes a long way with locals!</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Day-of Contact</h3>
+                        <p><strong>Bride's Emergency Contact:</strong> [Phone number]<br>
+                           <strong>Groom's Emergency Contact:</strong> [Phone number]<br>
+                           <strong>Wedding Coordinator:</strong> [Phone number]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-photo">
+                    <img src="pic.jpg" alt="MZ and Lulu" class="footer-couple-photo">
+                </div>
+                <p>&copy; 2024 Our Moroccan Wedding. Made with love.</p>
+                <p class="footer-names">MZ & Lulu</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
