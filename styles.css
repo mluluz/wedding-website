@@ -121,6 +121,8 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Navigation */
@@ -595,9 +597,15 @@ section:nth-child(even) {
 /* Stay Section */
 .stay-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+    .stay-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .stay-card {
@@ -710,9 +718,15 @@ section:nth-child(even) {
 
 .venues-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+    .venues-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .venue-card {
@@ -847,9 +861,15 @@ section:nth-child(even) {
 /* Tips Section */
 .tips-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .tip-card {
@@ -948,9 +968,15 @@ section:nth-child(even) {
 
 .faq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .faq-item {
@@ -1044,6 +1070,7 @@ section:nth-child(even) {
         transition: 0.3s;
         box-shadow: var(--shadow-medium);
         padding: 2rem 0;
+        z-index: 999;
     }
 
     .nav-menu.active {
@@ -1058,31 +1085,58 @@ section:nth-child(even) {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding: 0 1rem;
     }
 
     .hero-pattern {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .hero-date-container {
+        align-items: center;
     }
 
     .schedule-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .schedule-card {
+        padding: 2rem;
     }
 
     .stay-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .stay-card {
+        padding: 2rem;
     }
 
     .venues-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .tips-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tip-card {
+        padding: 2rem;
     }
 
     .faq-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .faq-item {
+        padding: 2rem;
     }
 
     .container {
@@ -1090,43 +1144,232 @@ section:nth-child(even) {
     }
 
     section {
-        padding: 4rem 0;
+        padding: 4rem 0 3rem 0;
     }
 
     .rsvp-form {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .form-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .event-grid {
+        gap: 1rem;
+    }
+
+    .event-card {
+        padding: 1.5rem;
+    }
+
+    .booking-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .booking-buttons .booking-link {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-year {
+        font-size: 2.5rem;
+        margin-left: 0;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .hero {
-        min-height: 80vh;
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+        gap: 1.5rem;
     }
 
     .hero-title {
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
         font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
     .hero-date {
-        font-size: 1.2rem;
-        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        padding: 1rem 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-year {
+        font-size: 2rem;
+        margin-left: 0;
+    }
+
+    .hero-pattern {
+        width: 200px;
+        height: 200px;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    section {
+        padding: 3rem 0;
     }
 
     .rsvp-form {
         padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .event-card {
+        padding: 1rem;
     }
 
     .radio-group {
         flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .schedule-card {
+        padding: 1.5rem;
+    }
+
+    .stay-card {
+        padding: 1.5rem;
+    }
+
+    .tip-card {
+        padding: 1.5rem;
+    }
+
+    .faq-item {
+        padding: 1.5rem;
+    }
+
+    .venue-card h3 {
+        margin: 1rem 1rem 0.75rem 1rem;
+    }
+
+    .venue-card p {
+        margin: 0 1rem 1rem 1rem;
+    }
+
+    .venue-address {
+        margin: 0 1rem;
+    }
+
+    .nav-menu {
+        top: 85px;
+    }
+
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-brand {
+        font-size: 1.4rem;
+    }
+}
+
+/* Additional mobile breakpoints */
+@media (max-width: 600px) {
+    .schedule-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .schedule-card {
+        padding: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 0 0.75rem;
+    }
+
+    .section-title::before {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .hero-content {
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-date {
+        font-size: 0.8rem;
+        padding: 0.75rem 1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-year {
+        font-size: 1.8rem;
+    }
+
+    .rsvp-form {
+        padding: 1rem;
+        margin: 0 0.25rem;
+    }
+
+    .nav-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .nav-container {
+        padding: 0 0.75rem;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
     }
 }
 
