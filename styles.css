@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(1.5rem, 5vw, 4rem);
     margin-bottom: 1rem;
 }
 
@@ -121,8 +121,6 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 /* Navigation */
@@ -141,9 +139,9 @@ p {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -224,11 +222,12 @@ p {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 4rem;
     align-items: center;
     max-width: 1400px;
     width: 100%;
     padding: 0 3rem;
+    margin: 0 auto;
 }
 
 .hero-text {
@@ -256,7 +255,7 @@ p {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .hero-date {
@@ -314,8 +313,13 @@ p {
 
 /* Sections */
 section {
-    padding: 8rem 0;
+    padding: 6rem 0;
     position: relative;
+}
+
+/* First section after hero gets less top padding */
+section:first-of-type {
+    padding-top: 4rem;
 }
 
 section:nth-child(even) {
@@ -324,7 +328,7 @@ section:nth-child(even) {
 
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     position: relative;
 }
@@ -336,12 +340,13 @@ section:nth-child(even) {
 .venues .section-title::before { content: '🌺'; font-size: 2rem; display: block; margin-bottom: 1rem; }
 .tips .section-title::before { content: '🧭'; font-size: 2rem; display: block; margin-bottom: 1rem; }
 .qa .section-title::before { content: '💭'; font-size: 2rem; display: block; margin-bottom: 1rem; }
+.vibes .section-title::before { content: '📸'; font-size: 2rem; display: block; margin-bottom: 1rem; }
 
 .section-subtitle {
     text-align: center;
     font-size: 1.2rem;
     color: var(--medium-gray);
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     font-weight: 300;
     max-width: 600px;
     margin-left: auto;
@@ -354,7 +359,7 @@ section:nth-child(even) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .schedule-card {
@@ -399,12 +404,14 @@ section:nth-child(even) {
     text-transform: uppercase;
     letter-spacing: 3px;
     flex-shrink: 0;
+    text-align: center;
 }
 
 .schedule-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    text-align: center;
 }
 
 .schedule-content h3 {
@@ -418,10 +425,6 @@ section:nth-child(even) {
     flex-grow: 1;
 }
 
-.schedule-content h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
 
 .schedule-time {
     font-weight: 400;
@@ -434,7 +437,7 @@ section:nth-child(even) {
     margin-top: 1.5rem;
     letter-spacing: 0.5px;
     flex-shrink: 0;
-    align-self: flex-start;
+    align-self: center;
 }
 .schedule-location {
     font-weight: 500;
@@ -443,6 +446,7 @@ section:nth-child(even) {
     margin-top: 0.5rem;
     font-style: italic;
     flex-shrink: 0;
+    text-align: center;
 }
 
 /* RSVP Section */
@@ -597,12 +601,12 @@ section:nth-child(even) {
 /* Stay Section */
 .stay-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 968px) {
     .stay-grid {
         grid-template-columns: 1fr;
     }
@@ -617,6 +621,8 @@ section:nth-child(even) {
     overflow: hidden;
     border: 1px solid rgba(200, 0, 0, 0.05);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .stay-card::before {
@@ -631,6 +637,7 @@ section:nth-child(even) {
 
 .stay-card:nth-child(1)::before { background: linear-gradient(90deg, var(--deep-purple), var(--soft-rose)); }
 .stay-card:nth-child(2)::before { background: linear-gradient(90deg, var(--sage-green), var(--mint-green)); }
+.stay-card:nth-child(3)::before { background: linear-gradient(90deg, var(--moroccan-orange), var(--saffron-yellow)); }
 
 .stay-card:hover {
     transform: translateY(-5px);
@@ -670,11 +677,18 @@ section:nth-child(even) {
     box-shadow: var(--shadow-medium);
 }
 
+.stay-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .booking-buttons {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin-top: 1.5rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
     align-items: flex-start;
 }
 
@@ -718,15 +732,9 @@ section:nth-child(even) {
 
 .venues-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
-}
-
-@media (max-width: 600px) {
-    .venues-grid {
-        grid-template-columns: 1fr;
-    }
+    margin-top: 2rem;
 }
 
 .venue-card {
@@ -861,15 +869,9 @@ section:nth-child(even) {
 /* Tips Section */
 .tips-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
-}
-
-@media (max-width: 600px) {
-    .tips-grid {
-        grid-template-columns: 1fr;
-    }
+    margin-top: 2rem;
 }
 
 .tip-card {
@@ -915,6 +917,11 @@ section:nth-child(even) {
 .tip-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-medium);
+}
+
+.tip-content strong {
+    color: var(--primary-red);
+}
 }
 
 .tip-card h3 {
@@ -968,15 +975,9 @@ section:nth-child(even) {
 
 .faq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
-}
-
-@media (max-width: 600px) {
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
+    margin-top: 2rem;
 }
 
 .faq-item {
@@ -1010,6 +1011,244 @@ section:nth-child(even) {
 .faq-item strong {
     color: var(--primary-red);
     font-weight: 500;
+}
+
+/* Vibes Section */
+.vibes {
+    background: var(--creamy-white);
+    position: relative;
+}
+
+.vibes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(200, 0, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(46, 95, 98, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.venue-gallery {
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-section {
+    margin-bottom: 4rem;
+}
+
+.gallery-section:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-section h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--charcoal);
+    font-weight: 400;
+}
+
+.venue-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s ease;
+    background: var(--pure-white);
+    border: 1px solid rgba(200, 0, 0, 0.05);
+}
+
+.photo-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 2;
+}
+
+.gallery-section:nth-child(1) .photo-item::before {
+    background: linear-gradient(90deg, var(--sage-green), var(--mint-green));
+}
+
+.gallery-section:nth-child(2) .photo-item::before {
+    background: linear-gradient(90deg, var(--warm-terracotta), var(--dusty-pink));
+}
+
+.gallery-section:nth-child(3) .photo-item::before {
+    background: linear-gradient(90deg, var(--saffron-yellow), var(--moroccan-orange));
+}
+
+.photo-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    display: block;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Add some spacing between gallery sections */
+.gallery-section + .gallery-section {
+    border-top: 1px solid rgba(200, 0, 0, 0.1);
+    padding-top: 4rem;
+    margin-top: 4rem;
+}
+
+/* Photo Grid Container with Navigation */
+.photo-grid-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--creamy-white);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-item.hidden {
+    display: none;
+}
+
+.photo-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(200, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gallery-section:nth-child(1) .photo-item::before {
+    background: linear-gradient(90deg, var(--deep-teal), var(--saffron-yellow));
+}
+
+.gallery-section:nth-child(2) .photo-item::before {
+    background: linear-gradient(90deg, var(--warm-terracotta), var(--dusty-pink));
+}
+
+.gallery-section:nth-child(3) .photo-item::before {
+    background: linear-gradient(90deg, var(--saffron-yellow), var(--moroccan-orange));
+}
+
+.photo-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.photo-item:hover::before {
+    opacity: 0.15;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    display: block;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Gallery Controls */
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-btn {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.gallery-btn:hover {
+    background: var(--deep-burgundy);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-medium);
+}
+
+.gallery-btn:disabled {
+    background: rgba(200, 0, 0, 0.3);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.photo-counter {
+    font-family: var(--font-accent);
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
 }
 
 /* Footer */
@@ -1070,7 +1309,6 @@ section:nth-child(even) {
         transition: 0.3s;
         box-shadow: var(--shadow-medium);
         padding: 2rem 0;
-        z-index: 999;
     }
 
     .nav-menu.active {
@@ -1085,291 +1323,128 @@ section:nth-child(even) {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
 
     .hero-pattern {
-        width: 250px;
-        height: 250px;
-        margin: 0 auto;
-    }
-
-    .hero-date-container {
-        align-items: center;
+        width: 300px;
+        height: 300px;
     }
 
     .schedule-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .schedule-card {
-        padding: 2rem;
     }
 
     .stay-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .stay-card {
-        padding: 2rem;
     }
 
     .venues-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
     .tips-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .tip-card {
-        padding: 2rem;
     }
 
     .faq-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
-    .faq-item {
-        padding: 2rem;
-    }
-
-    .container {
-        padding: 0 1rem;
-    }
-
-    section {
-        padding: 4rem 0 3rem 0;
-    }
-
-    .rsvp-form {
-        padding: 2rem 1.5rem;
-    }
-
-    .form-section {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .event-grid {
+    .photo-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
-    .event-card {
-        padding: 1.5rem;
-    }
-
-    .booking-buttons {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .booking-buttons .booking-link {
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-year {
-        font-size: 2.5rem;
-        margin-left: 0;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        min-height: 100vh;
-        padding-top: 80px;
-    }
-
-    .hero-content {
-        padding: 0 1rem;
-        gap: 1.5rem;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    .hero-date {
-        font-size: 0.9rem;
-        padding: 1rem 1.5rem;
-        letter-spacing: 1px;
-    }
-
-    .hero-year {
-        font-size: 2rem;
-        margin-left: 0;
-    }
-
-    .hero-pattern {
-        width: 200px;
+    .photo-item img {
         height: 200px;
     }
 
-    h2 {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+    .gallery-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 
-    .section-title {
-        font-size: 1.8rem;
+    .gallery-controls {
+        gap: 1rem;
+    }
+
+    .photo-counter {
+        font-size: 0.85rem;
+        min-width: 70px;
     }
 
     .container {
-        padding: 0 0.75rem;
+        padding: 0 1rem;
     }
 
     section {
         padding: 3rem 0;
     }
 
+    /* First section after hero gets less top padding on mobile */
+    section:first-of-type {
+        padding-top: 2rem;
+    }
+
+    .rsvp-form {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 100vh;
+        padding: 2rem 0;
+        overflow: visible;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+    
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-date-container {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .hero-year {
+        font-size: 2.2rem;
+        margin-left: 0;
+    }
+
+    .hero-date {
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
     .rsvp-form {
         padding: 1.5rem;
-        margin: 0 0.5rem;
-    }
-
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-
-    .form-section {
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .event-card {
-        padding: 1rem;
     }
 
     .radio-group {
         flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .schedule-card {
-        padding: 1.5rem;
-    }
-
-    .stay-card {
-        padding: 1.5rem;
-    }
-
-    .tip-card {
-        padding: 1.5rem;
-    }
-
-    .faq-item {
-        padding: 1.5rem;
-    }
-
-    .venue-card h3 {
-        margin: 1rem 1rem 0.75rem 1rem;
-    }
-
-    .venue-card p {
-        margin: 0 1rem 1rem 1rem;
-    }
-
-    .venue-address {
-        margin: 0 1rem;
-    }
-
-    .nav-menu {
-        top: 85px;
-    }
-
-    .navbar {
-        padding: 1rem 0;
-    }
-
-    .nav-container {
-        padding: 0 1rem;
-    }
-
-    .nav-brand {
-        font-size: 1.4rem;
-    }
-}
-
-/* Additional mobile breakpoints */
-@media (max-width: 600px) {
-    .schedule-grid {
-        grid-template-columns: 1fr;
         gap: 1rem;
-    }
-
-    .schedule-card {
-        padding: 1.5rem;
-    }
-
-    .hero-content {
-        padding: 0 0.75rem;
-    }
-
-    .section-title::before {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .container {
-        padding: 0 0.5rem;
-    }
-
-    .hero-content {
-        padding: 0 0.5rem;
-        gap: 1rem;
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
-    }
-
-    .hero-date {
-        font-size: 0.8rem;
-        padding: 0.75rem 1rem;
-        letter-spacing: 0.5px;
-    }
-
-    .hero-year {
-        font-size: 1.8rem;
-    }
-
-    .rsvp-form {
-        padding: 1rem;
-        margin: 0 0.25rem;
-    }
-
-    .nav-brand {
-        font-size: 1.2rem;
-    }
-
-    .navbar {
-        padding: 0.75rem 0;
-    }
-
-    .nav-container {
-        padding: 0 0.75rem;
-    }
-
-    section {
-        padding: 2.5rem 0;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
     }
 }
 

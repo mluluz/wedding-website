@@ -531,6 +531,90 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 600);
         });
     });
+
+    // Photo Grid Navigation functionality
+    function initPhotoGrid(container) {
+        const photoItems = container.querySelectorAll('.photo-item');
+        const prevBtn = container.querySelector('.gallery-btn.prev');
+        const nextBtn = container.querySelector('.gallery-btn.next');
+
+        const photosPerPage = 3;
+        const totalPhotos = photoItems.length;
+        const totalPages = Math.ceil(totalPhotos / photosPerPage);
+        let currentPage = 0;
+
+        function updateGrid() {
+            // Hide all photos
+            photoItems.forEach((item, index) => {
+                const startIndex = currentPage * photosPerPage;
+                const endIndex = startIndex + photosPerPage;
+
+                if (index >= startIndex && index < endIndex) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Update button states
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = currentPage === totalPages - 1;
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                updateGrid();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                updateGrid();
+            }
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextPage);
+        prevBtn.addEventListener('click', prevPage);
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        container.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        container.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const threshold = 50; // minimum swipe distance
+
+            if (startX - endX > threshold) {
+                nextPage(); // swipe left - next page
+            } else if (endX - startX > threshold) {
+                prevPage(); // swipe right - previous page
+            }
+        });
+
+        // Keyboard navigation
+        container.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevPage();
+                e.preventDefault();
+            } else if (e.key === 'ArrowRight') {
+                nextPage();
+                e.preventDefault();
+            }
+        });
+
+        // Initialize grid
+        updateGrid();
+    }
+
+    // Initialize all photo grids
+    document.querySelectorAll('.photo-grid-container').forEach(initPhotoGrid);
 });
 
 // Add CSS for animations and effects
