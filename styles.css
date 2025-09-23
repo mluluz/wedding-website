@@ -217,6 +217,7 @@ p {
     position: relative;
     background: linear-gradient(135deg, var(--creamy-white) 0%, var(--warm-beige) 100%);
     overflow: hidden;
+    padding-top: 120px; /* Add top padding to account for fixed navbar */
 }
 
 .hero-content {
@@ -1322,6 +1323,10 @@ section:nth-child(even) {
         display: flex;
     }
 
+    .hero {
+        padding-top: 100px; /* Adjust top padding for tablet/mobile */
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1399,7 +1404,7 @@ section:nth-child(even) {
 @media (max-width: 480px) {
     .hero {
         min-height: 100vh;
-        padding: 2rem 0;
+        padding: 100px 0 2rem 0; /* Maintain top padding on mobile too */
         overflow: visible;
     }
     
