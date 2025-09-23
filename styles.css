@@ -217,6 +217,7 @@ p {
     position: relative;
     background: linear-gradient(135deg, var(--creamy-white) 0%, var(--warm-beige) 100%);
     overflow: hidden;
+    padding-top: 120px; /* Add top padding to account for fixed navbar */
 }
 
 .hero-content {
@@ -334,13 +335,6 @@ section:nth-child(even) {
 }
 
 /* Decorative icons for section titles */
-.schedule .section-title::before { content: '🌅'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.rsvp .section-title::before { content: '💌'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.stay .section-title::before { content: '🏛️'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.venues .section-title::before { content: '🌺'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.tips .section-title::before { content: '🧭'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.qa .section-title::before { content: '💭'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.vibes .section-title::before { content: '📸'; font-size: 2rem; display: block; margin-bottom: 1rem; }
 
 .section-subtitle {
     text-align: center;
@@ -764,7 +758,7 @@ section:nth-child(even) {
 }
 
 .venue-lotus::before {
-    content: '🌸🌿';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -780,7 +774,7 @@ section:nth-child(even) {
 }
 
 .venue-beldi::before {
-    content: '🏜️🐪';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -796,7 +790,7 @@ section:nth-child(even) {
 }
 
 .venue-tbd::before {
-    content: '✨🌟';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -883,30 +877,16 @@ section:nth-child(even) {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.tip-card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    opacity: 0.05;
-    pointer-events: none;
 }
 
 .tip-intro { border-left-color: var(--primary-red); }
-.tip-intro::after { background: radial-gradient(circle, var(--primary-red), transparent); }
-
 .tip-see { border-left-color: var(--deep-teal); }
-.tip-see::after { background: radial-gradient(circle, var(--deep-teal), transparent); }
-
 .tip-eat { border-left-color: var(--moroccan-orange); }
-.tip-eat::after { background: radial-gradient(circle, var(--moroccan-orange), transparent); }
-
 .tip-drink { border-left-color: var(--deep-purple); }
-.tip-drink::after { background: radial-gradient(circle, var(--deep-purple), transparent); }
+.tip-eat-drink { border-left-color: var(--moroccan-orange); }
 
 .tip-icon {
     font-size: 2.5rem;
@@ -928,6 +908,7 @@ section:nth-child(even) {
     margin-bottom: 2rem;
     color: var(--charcoal);
     font-weight: 400;
+    flex-shrink: 0;
 }
 
 .tip-card h4 {
@@ -951,6 +932,29 @@ section:nth-child(even) {
     color: var(--warm-terracotta);
     font-style: italic;
     font-weight: 300;
+}
+
+.tip-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-content ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.tip-content > *:first-child {
+    margin-top: 0 !important;
+}
+
+.tip-content p:first-child {
+    margin-top: -0.2rem !important;
+}
+
+.tip-content ul:first-child {
+    margin-top: 0 !important;
 }
 
 /* Q&A Section */
@@ -1319,6 +1323,10 @@ section:nth-child(even) {
         display: flex;
     }
 
+    .hero {
+        padding-top: 100px; /* Adjust top padding for tablet/mobile */
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1396,7 +1404,7 @@ section:nth-child(even) {
 @media (max-width: 480px) {
     .hero {
         min-height: 100vh;
-        padding: 2rem 0;
+        padding: 100px 0 2rem 0; /* Maintain top padding on mobile too */
         overflow: visible;
     }
     
