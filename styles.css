@@ -334,13 +334,6 @@ section:nth-child(even) {
 }
 
 /* Decorative icons for section titles */
-.schedule .section-title::before { content: '🌅'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.rsvp .section-title::before { content: '💌'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.stay .section-title::before { content: '🏛️'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.venues .section-title::before { content: '🌺'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.tips .section-title::before { content: '🧭'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.qa .section-title::before { content: '💭'; font-size: 2rem; display: block; margin-bottom: 1rem; }
-.vibes .section-title::before { content: '📸'; font-size: 2rem; display: block; margin-bottom: 1rem; }
 
 .section-subtitle {
     text-align: center;
