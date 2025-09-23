@@ -538,40 +538,34 @@ document.addEventListener('DOMContentLoaded', function() {
         const prevBtn = container.querySelector('.gallery-btn.prev');
         const nextBtn = container.querySelector('.gallery-btn.next');
 
-        const photosPerPage = 3;
+        const photosToShow = 3;
         const totalPhotos = photoItems.length;
-        const totalPages = Math.ceil(totalPhotos / photosPerPage);
-        let currentPage = 0;
+        let currentStartIndex = 0;
 
         function updateGrid() {
-            // Hide all photos
-            photoItems.forEach((item, index) => {
-                const startIndex = currentPage * photosPerPage;
-                const endIndex = startIndex + photosPerPage;
+            // Hide all photos first
+            photoItems.forEach(item => item.classList.add('hidden'));
 
-                if (index >= startIndex && index < endIndex) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-
-            // In looping mode, buttons are never disabled
+            // Show exactly 3 consecutive photos with looping
+            for (let i = 0; i < photosToShow; i++) {
+                const photoIndex = (currentStartIndex + i) % totalPhotos;
+                photoItems[photoIndex].classList.remove('hidden');
+            }
         }
 
-        function nextPage() {
-            currentPage = (currentPage + 1) % totalPages;
+        function nextPhoto() {
+            currentStartIndex = (currentStartIndex + 1) % totalPhotos;
             updateGrid();
         }
 
-        function prevPage() {
-            currentPage = (currentPage - 1 + totalPages) % totalPages;
+        function prevPhoto() {
+            currentStartIndex = (currentStartIndex - 1 + totalPhotos) % totalPhotos;
             updateGrid();
         }
 
         // Event listeners
-        nextBtn.addEventListener('click', nextPage);
-        prevBtn.addEventListener('click', prevPage);
+        nextBtn.addEventListener('click', nextPhoto);
+        prevBtn.addEventListener('click', prevPhoto);
 
         // Touch/swipe support for mobile
         let startX = 0;
@@ -586,19 +580,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const threshold = 50; // minimum swipe distance
 
             if (startX - endX > threshold) {
-                nextPage(); // swipe left - next page
+                nextPhoto(); // swipe left - next photo
             } else if (endX - startX > threshold) {
-                prevPage(); // swipe right - previous page
+                prevPhoto(); // swipe right - previous photo
             }
         });
 
         // Keyboard navigation
         container.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
-                prevPage();
+                prevPhoto();
                 e.preventDefault();
             } else if (e.key === 'ArrowRight') {
-                nextPage();
+                nextPhoto();
                 e.preventDefault();
             }
         });
