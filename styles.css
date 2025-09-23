@@ -876,6 +876,9 @@ section:nth-child(even) {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .tip-intro { border-left-color: var(--primary-red); }
@@ -904,6 +907,7 @@ section:nth-child(even) {
     margin-bottom: 2rem;
     color: var(--charcoal);
     font-weight: 400;
+    flex-shrink: 0;
 }
 
 .tip-card h4 {
@@ -927,6 +931,29 @@ section:nth-child(even) {
     color: var(--warm-terracotta);
     font-style: italic;
     font-weight: 300;
+}
+
+.tip-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-content ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.tip-content > *:first-child {
+    margin-top: 0 !important;
+}
+
+.tip-content p:first-child {
+    margin-top: -0.2rem !important;
+}
+
+.tip-content ul:first-child {
+    margin-top: 0 !important;
 }
 
 /* Q&A Section */
