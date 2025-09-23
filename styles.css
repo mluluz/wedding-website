@@ -757,7 +757,7 @@ section:nth-child(even) {
 }
 
 .venue-lotus::before {
-    content: '🌸🌿';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -773,7 +773,7 @@ section:nth-child(even) {
 }
 
 .venue-beldi::before {
-    content: '🏜️🐪';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -789,7 +789,7 @@ section:nth-child(even) {
 }
 
 .venue-tbd::before {
-    content: '✨🌟';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;

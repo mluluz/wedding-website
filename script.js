@@ -556,23 +556,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Update button states
-            prevBtn.disabled = currentPage === 0;
-            nextBtn.disabled = currentPage === totalPages - 1;
+            // In looping mode, buttons are never disabled
         }
 
         function nextPage() {
-            if (currentPage < totalPages - 1) {
-                currentPage++;
-                updateGrid();
-            }
+            currentPage = (currentPage + 1) % totalPages;
+            updateGrid();
         }
 
         function prevPage() {
-            if (currentPage > 0) {
-                currentPage--;
-                updateGrid();
-            }
+            currentPage = (currentPage - 1 + totalPages) % totalPages;
+            updateGrid();
         }
 
         // Event listeners
