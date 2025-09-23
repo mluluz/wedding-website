@@ -885,28 +885,11 @@ section:nth-child(even) {
     overflow: hidden;
 }
 
-.tip-card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    opacity: 0.05;
-    pointer-events: none;
-}
-
 .tip-intro { border-left-color: var(--primary-red); }
-.tip-intro::after { background: radial-gradient(circle, var(--primary-red), transparent); }
-
 .tip-see { border-left-color: var(--deep-teal); }
-.tip-see::after { background: radial-gradient(circle, var(--deep-teal), transparent); }
-
 .tip-eat { border-left-color: var(--moroccan-orange); }
-.tip-eat::after { background: radial-gradient(circle, var(--moroccan-orange), transparent); }
-
 .tip-drink { border-left-color: var(--deep-purple); }
-.tip-drink::after { background: radial-gradient(circle, var(--deep-purple), transparent); }
+.tip-eat-drink { border-left-color: var(--moroccan-orange); }
 
 .tip-icon {
     font-size: 2.5rem;
