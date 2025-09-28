@@ -1183,10 +1183,15 @@ section:nth-child(even) {
     z-index: 1;
 }
 
-.faq-item:nth-child(2n) { border-left-color: var(--warm-coral); }
-.faq-item:nth-child(3n) { border-left-color: var(--saffron-yellow); }
-.faq-item:nth-child(4n) { border-left-color: var(--deep-teal); }
-.faq-item:nth-child(5n) { border-left-color: var(--dusty-pink); }
+.faq-item:nth-child(1) { border-left-color: var(--primary-red); }
+.faq-item:nth-child(2) { border-left-color: var(--moroccan-orange); }
+.faq-item:nth-child(3) { border-left-color: var(--deep-teal); }
+.faq-item:nth-child(4) { border-left-color: var(--saffron-yellow); }
+.faq-item:nth-child(5) { border-left-color: var(--deep-purple); }
+.faq-item:nth-child(6) { border-left-color: var(--sage-green); }
+.faq-item:nth-child(7) { border-left-color: var(--warm-coral); }
+.faq-item:nth-child(8) { border-left-color: var(--dusty-pink); }
+.faq-item:nth-child(9) { border-left-color: var(--warm-terracotta); }
 
 .faq-item:hover {
     transform: translateY(-3px);
